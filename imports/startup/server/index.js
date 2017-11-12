@@ -7,10 +7,24 @@ import { Helmet } from 'react-helmet';
 
 import App from 'imports/ui/app';
 
+import { createStore } from 'redux'
+import appStore from 'imports/redux/reducers';
+import { Provider } from 'react-redux';
+
 _ = lodash;
 
 onPageLoad((sink) => {
-  sink.renderIntoElementById('app', renderToString(<App />));
+
+  const initialState = {
+    counter: 69
+  }
+
+  const store = createStore(
+    appStore, 
+    initialState
+  );
+
+  sink.renderIntoElementById('app', renderToString(<Provider store={store}><App /></Provider>));
 
   const helmet = Helmet.renderStatic();
   sink.appendToHead(helmet.meta.toString());
@@ -18,7 +32,7 @@ onPageLoad((sink) => {
 
   sink.appendToBody(`
     <script>
-      window.__PRELOADED_STATE__ = ${JSON.stringify({ ssr: true }).replace(/</g, '\\u003c')}
+      window.__PRELOADED_STATE__ = ${JSON.stringify(initialState).replace(/</g, '\\u003c')}
     </script>
   `);
 });
