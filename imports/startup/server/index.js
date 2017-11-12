@@ -1,17 +1,13 @@
-import lodash from 'lodash';
-
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { onPageLoad } from 'meteor/server-render';
 import { Helmet } from 'react-helmet';
 
-import App from 'imports/ui/app';
-
 import { createStore } from 'redux'
 import appStore from 'imports/redux/reducers';
 import { Provider } from 'react-redux';
 
-_ = lodash;
+import App from 'imports/ui/app';
 
 onPageLoad((sink) => {
 
@@ -24,7 +20,11 @@ onPageLoad((sink) => {
     initialState
   );
 
-  sink.renderIntoElementById('app', renderToString(<Provider store={store}><App /></Provider>));
+  sink.renderIntoElementById('app', renderToString(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  ));
 
   const helmet = Helmet.renderStatic();
   sink.appendToHead(helmet.meta.toString());

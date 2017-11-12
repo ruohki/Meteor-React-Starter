@@ -4,9 +4,6 @@ import { connect } from 'react-redux'
 
 import { increaseCounter, decreaseCounter } from '../redux/actions';
 class App extends Component {
-  componentDidMount() {
-    console.log(this);
-  }
   render() {
     return (
       <div>
