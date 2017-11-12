@@ -1,0 +1,35 @@
+{
+  "plugins": ["meteor"],
+  "extends": ["airbnb", "plugin:meteor/recommended"],
+  "globals": {
+    "document": true,
+    "window": true,
+    "_": true
+  },
+  "rules": {
+    "linebreak-style": [
+      "off"
+    ],
+    "eol-last": [
+      "off"
+    ],
+    "react/prefer-stateless-function": [
+      "off"
+    ],
+    "react/jsx-filename-extension": [
+      "off"
+    ],
+    "import/no-extraneous-dependencies": [
+      "off"
+    ],
+    "import/extensions": [
+      "off"
+    ],
+    "import/no-unresolved": [
+      "off"
+    ]
+  },
+  "settings": {
+    "import/core-modules": [ "document", "meteor", "meteor/meteor", "meteor/tracker" ]
+  }
+}
