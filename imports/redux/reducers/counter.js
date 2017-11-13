@@ -6,9 +6,9 @@ const initialState = 0
 const counter = (state = initialState, action) => {
   switch (action.type) {
     case COUNTER_INC:
-      return state + 1;
+      return state + action.inc;
     case COUNTER_DEC:
-      return state - 1;
+      return state - action.dec;
     default:
       return state
   }
