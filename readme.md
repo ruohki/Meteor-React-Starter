@@ -1,5 +1,4 @@
 # Meteor-React-Starterkit
----
 
 ## Core Features
 * Meteor
