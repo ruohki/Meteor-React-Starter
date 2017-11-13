@@ -8,4 +8,4 @@
 
 ## TODO:
 * Routing
-* Authenticatio
+* Authentication
