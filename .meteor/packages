@@ -26,6 +26,7 @@ force-ssl
 ### security
 service-configuration
 accounts-base
+accounts-password
 #accounts-password
 alanning:roles
 
